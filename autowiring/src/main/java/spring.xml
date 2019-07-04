@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="spellchecker" class="com.opentext.autowiring.beans.SpellChecker" ></bean>
+
+
+<!-- autowiring 1st type:default using ref attribute-->
+  
+<!-- <bean id="texteditor" class="com.opentext.autowiring.beans.TextEditor"> -->
+<!-- <property name="name" value="any name"></property> -->
+<!-- <property name="spellchecker" ref="spellchecker"></property>          here ref should match with the id of the text editor bean -->
+<!-- </bean> -->
+
+
+<!-- autowiring 2nd type:by name -->
+<!-- <bean id="texteditor" class="com.opentext.autowiring.beans.TextEditor" autowire="byName"> -->
+<!-- <property name="name" value="any name"></property> -->
+<!-- </bean> -->
+
+
+<!-- autowiring 3rd type:by type -->
+<!-- <bean id="texteditor" class="com.opentext.autowiring.beans.TextEditor" autowire="byType"> -->
+<!-- <property name="name" value="any name"></property> -->
+<!-- </bean> -->
+
+<!-- autowiring 4th type:constructor  using constructorarg tag-->
+<bean id="texteditor" class="com.opentext.autowiring.beans.TextEditor" autowire="constructor">
+<constructor-arg name="name" value="any name"></constructor-arg>
+</bean>
+
+</beans>
